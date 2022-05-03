@@ -1,12 +1,23 @@
-type SuperPrint = {
-    <T,M>(arr : T[], b:M) : T
+
+type Player<E> = {
+    name: string
+    extraInfo:E
 }
 
-const superPrint : SuperPrint = (arr) => {
-    return arr[0]
+type HwarakExtra = {
+    favFood:string
 }
 
-const a = superPrint([1,2,3],"")
-const b = superPrint([true, false, true],1)
-const c = superPrint(["hello","hi","no"],true)
-const d = superPrint(["hello","hi","no",false, true],34)
+type HwarakPlayer = Player<HwarakExtra>
+
+const hwarak:HwarakPlayer = {
+    name:"hwarak",
+    extraInfo:{
+        favFood:"chicken"
+    }
+}
+
+const bibi:Player<null> = {
+    name:"bibi",
+    extraInfo:null
+}        
