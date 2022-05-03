@@ -1,9 +1,18 @@
-type Add = {
-    (a: number, b:number) : number
-    (a: number, b:number, c:number) : number
+// type SuperPrint = {
+//     (arr : number[]) : void
+//     (arr : boolean[]) : void
+//     (arr : string[]) : void
+// }
+
+type SuperPrint = {
+    <TypePlaceholder>(arr : TypePlaceholder[]) : void
 }
 
-const add:Add = (a,b,c?:number) => {
-    if(c) return a + b + c
-    else return a+b;
+const superPrint : SuperPrint = (arr) => {
+    arr.forEach(i => console.log(i))
 }
+
+superPrint([1,2,3])
+superPrint([true, false, true])
+superPrint(["hello","hi","no"])
+superPrint(["hello","hi","no",false, true])
