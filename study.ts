@@ -1,10 +1,14 @@
-const player : {
+type Player = {
     name : string,
-    age? : number
-} = {
-    name: "hwarak"
+age? : number
 }
 
-if(player.age && player.age < 10){
+const playerHwarak : Player = {
+name: "hwarak"
+}
 
+
+const playerBibi : Player = {
+name: "Bibi",
+age:12
 }
