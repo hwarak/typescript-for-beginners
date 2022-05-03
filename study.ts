@@ -4,11 +4,13 @@ type Player = {
 }
 
 
-function Playermaker(name : string) : Player{
- return{
-     name
- }
-}
+// function Playermaker(name : string) : Player{
+//  return{
+//      name
+//  }
+// }
+
+const Playermaker = (name : string) : Player => ({name})
 
 const minhee = Playermaker("minhee")
 minhee.age = 12
