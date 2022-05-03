@@ -1,6 +1,9 @@
-// const add = (a: number, b: number) => a + b;
+type Add = {
+    (a: number, b:number) : number
+    (a: number, b:number, c:number) : number
+}
 
-type Add = (a: number, b: number) => number
-const add: Add = (a, b) => a + b;
-
-
+const add:Add = (a,b,c?:number) => {
+    if(c) return a + b + c
+    else return a+b;
+}
