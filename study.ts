@@ -1,6 +1,8 @@
+type Age = number;
+type Name = string;
 type Player = {
-    name: string,
-    age?: number
+    name: Name,
+    readonly  age?: Age
 }
 
 
@@ -13,4 +15,4 @@ type Player = {
 const Playermaker = (name : string) : Player => ({name})
 
 const minhee = Playermaker("minhee")
-minhee.age = 12
+minhee.age = 12 //에러생김
