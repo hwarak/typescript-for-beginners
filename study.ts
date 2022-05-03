@@ -4,3 +4,7 @@ const player : {
 } = {
     name: "hwarak"
 }
+
+if(player.age && player.age < 10){
+
+}
