@@ -1,23 +1,24 @@
+abstract class User{
+    constructor(
+        protected firstName:string,
+        protected lastName:String,
+        protected nickName:string
+    ){}
 
-// type Player<E> = {
-//     name: string
-//     extraInfo:E
-// }
+    abstract getNickname():void
 
-// type HwarakExtra = {
-//     favFood:string
-// }
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+}
 
-// type HwarakPlayer = Player<HwarakExtra>
+class Player extends User{
+    getNickname(){
+        console.log(`${this.nickName}`)
+    }
+    
+}
 
-// const hwarak:HwarakPlayer = {
-//     name:"hwarak",
-//     extraInfo:{
-//         favFood:"chicken"
-//     }
-// }
+const hwarak = new Player("minhee", "seo", "hwarak")
+hwarak.getFullName();
 
-// const bibi:Player<null> = {
-//     name:"bibi",
-//     extraInfo:null
-// }        
