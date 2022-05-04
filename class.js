@@ -12,12 +12,18 @@ class User{
     }
 
     set age(value) {
-        if (value < 0) {
-            throw Error('age can not ve negative')
-        }
-        this._age = value
+        this._age = value < 0 ? 0 : value
     }
 }
 
 const user1 = new User('Steve', 'Job', -1)
 console.log(user1.age)
+
+class Experiment{
+    publicFeild = 2;
+    #privateFeild = 0;
+}
+
+const experiment = new Experiment();
+console.log(experiment.publicFeild);
+console.log(experiment.privateFeild)
