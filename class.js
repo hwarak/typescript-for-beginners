@@ -1,23 +1,23 @@
 'use strict'
 
-
-class Person{
-    // constructor
-    constructor(name, age) {
-        // fields
-        this.name = name;
+class User{
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
     }
 
-    // methods
-    speak() {
-        console.log(`${this.name}: hello!`)
+    get age() {
+        return this._age;
+    }
+
+    set age(value) {
+        if (value < 0) {
+            throw Error('age can not ve negative')
+        }
+        this._age = value
     }
 }
 
-
-const hwarak = new Person(`hwarak`, 26)
-
-console.log(hwarak.name)
-console.log(hwarak.age)
-hwarak.speak();
+const user1 = new User('Steve', 'Job', -1)
+console.log(user1.age)
