@@ -1,45 +1,41 @@
 'use strict'
 
-class User{
-    constructor(firstName, lastName, age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+class Shape{
+    constructor(width, height, color){
+        this.width = width;
+        this.height = height;
+        this.color = color;
     }
 
-    get age() {
-        return this._age;
+    draw() {
+        console.log(`drawing ${this.color} color!!!!!`)
     }
 
-    set age(value) {
-        this._age = value < 0 ? 0 : value
-    }
-}
-
-const user1 = new User('Steve', 'Job', -1)
-console.log(user1.age)
-
-class Experiment{
-    publicFeild = 2;
-    #privateFeild = 0;
-}
-
-const experiment = new Experiment();
-console.log(experiment.publicFeild);
-console.log(experiment.privateFeild);
-
-class Article {
-    static publisher = "today is good";
-    constructor(articleNumber) {
-        this.articleNumber = articleNumber;
-    }
-    static printPublisher() {
-        console.log(Article.publisher)
+    getArea() {
+        return this.width * this.height
     }
 }
 
-const article1 = new Article(1);
-const article2 = new Article(2);
-console.log(article1.publisher)
-console.log(Article.publisher)
-Article.printPublisher();
+class Rectangle extends Shape{
+
+}
+
+class Triangle extends Shape {
+    draw() {
+        super.draw();
+        console.log(`⚠`)
+    }
+    getArea() {
+        return (this.width * this.height) / 2
+    }
+
+}
+
+const rectangel = new Rectangle(30, 20, "tomato")
+const triangle = new Triangle(30, 20, "blue")
+
+rectangel.draw();
+triangle.draw();
+
+console.log(rectangel.getArea());
+console.log(triangle.getArea());
