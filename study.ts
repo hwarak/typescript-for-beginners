@@ -1,8 +1,8 @@
-interface User {
+type User = {
   name: string;
-}
+};
 
-interface Player extends User {}
+type Player = User & {};
 
 const hwarak: Player = {
   name: "minhee",
