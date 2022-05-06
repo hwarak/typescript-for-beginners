@@ -1,11 +1,9 @@
-type Team = "red" | "blue" | "yellow";
+interface User {
+  name: string;
+}
 
-type Player = {
-  nickname: string;
-  team: Team;
-};
+interface Player extends User {}
 
 const hwarak: Player = {
-  nickname: "hwarak",
-  team: "blue",
+  name: "minhee",
 };
