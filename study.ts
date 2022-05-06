@@ -1,9 +1,25 @@
-type User = {
-  name: string;
-};
+interface User {
+  firstName: string;
+  lastName: string;
+  sayHi(name: string): string;
+  fullName(): string;
+}
 
-type Player = User & {};
+interface Human {
+  helth: number;
+}
 
-const hwarak: Player = {
-  name: "minhee",
-};
+class Player implements User, Human {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public helth: number
+  ) {}
+
+  sayHi(name: string) {
+    return `hi ${name}, My name is ${this.fullName()}`;
+  }
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
